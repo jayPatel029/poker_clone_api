@@ -3,7 +3,7 @@ include('index.php');
 
 
 //get game IDs
-$sql = "SELECT game_id FROM Games WHERE status = 'waiting'";
+$sql = "SELECT game_id FROM games WHERE status = 'waiting'";
 $result = $conn->query($sql);
 
 $response = array();
