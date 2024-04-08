@@ -5,7 +5,7 @@ include('index.php');
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     
     // get game info
-    $sql = "SELECT * FROM GameInfo";
+    $sql = "SELECT * FROM gameInfo";
     $result = $conn->query($sql);
 
     if ($result) {
