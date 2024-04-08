@@ -19,8 +19,8 @@ include('index.php');
     $game_id = mysqli_real_escape_string($conn, $_POST["game_id"]);
 
     //  stmts to prevent SQL injection
-    $insert_query = "INSERT INTO UserGames (user_id, game_id) VALUES (?, (SELECT id FROM Games WHERE game_id = ? AND status = 'waiting'))";
-    $update_query = "INSERT INTO GameInfo (game_id, status, num_players, timestamp) VALUES (?, 'waiting', 1, NOW()) ON DUPLICATE KEY UPDATE num_players = num_players + 1";
+    $insert_query = "INSERT INTO usergames (user_id, game_id) VALUES (?, (SELECT id FROM games WHERE game_id = ? AND status = 'waiting'))";
+    $update_query = "INSERT INTO gameinfo (game_id, status, num_players, timestamp) VALUES (?, 'waiting', 1, NOW()) ON DUPLICATE KEY UPDATE num_players = num_players + 1";
 
     $stmt_insert = $conn->prepare($insert_query);
     $stmt_insert->bind_param("is", $user_id, $game_id);
