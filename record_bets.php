@@ -16,7 +16,7 @@ $user_id = $_SESSION['user_id'];
 query's to get the game ID assc. with the curr. user
 gameid --> usergames(table) only if active (i.e. active=1)
 */
-$get_game_id_query = "SELECT game_id FROM UserGames WHERE user_id = ? AND is_active = 1";
+$get_game_id_query = "SELECT game_id FROM usergames WHERE user_id = ? AND is_active = 1";
 $stmt = $conn->prepare($get_game_id_query);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -43,7 +43,7 @@ $amount = $_POST["amount"];
 $bet_type = $_POST["bet_type"];
 
 // Insert bet into the 'userbets' table
-$insert_query = "INSERT INTO UserBets (user_id, game_id, round_number, amount, bet_type) VALUES (?, ?, ?, ?, ?)";
+$insert_query = "INSERT INTO userbets (user_id, game_id, round_number, amount, bet_type) VALUES (?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($insert_query);
 $stmt->bind_param("iiids", $user_id, $game_id, $round_number, $amount, $bet_type);
 
