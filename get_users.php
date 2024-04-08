@@ -7,7 +7,7 @@ header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, 
 header('Content-Type: application/json');
 
 // Select all users
-$sql = "SELECT * FROM Users";
+$sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 
 $response = array();
