@@ -22,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo json_encode(array("message" => "Error: " . $stmt->error));
     }
     $stmt->close();
-    $conn->close();
 }
+    $conn->close();
 
 
 ?>
